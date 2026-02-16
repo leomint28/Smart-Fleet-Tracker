@@ -38,7 +38,7 @@ The system addresses the problem of **fleet maintenance and safety** by providin
     ```
 3.  Run the simulation script:
     ```bash
-    python fleet_sim.py
+    python main.py
     ```
 
 ### 3. Setup the Dashboard (Node-RED)
