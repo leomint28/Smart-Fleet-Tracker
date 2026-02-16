@@ -21,12 +21,6 @@ The system addresses the problem of **fleet maintenance and safety** by providin
 * [cite_start]**Application Layer:** Node-RED & Node-RED Dashboard [cite: 25]
 * **Libraries:** `paho-mqtt` (Python), `node-red-contrib-web-worldmap`
 
-## 📸 Screenshots
-*(Place your screenshots here! Example:)*
-| Fleet Map | Dashboard Telemetry |
-|:---:|:---:|
-| ![Map View](path/to/your/map_screenshot.png) | ![Gauges](path/to/your/dashboard_screenshot.png) |
-
 ## 📦 Installation & Usage
 
 ### 1. Prerequisites
