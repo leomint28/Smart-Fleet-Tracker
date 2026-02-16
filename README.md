@@ -30,7 +30,7 @@ The system addresses the problem of **fleet maintenance and safety** by providin
 ### 2. Setup the Device Simulation
 1.  Clone this repository:
     ```bash
-    git clone [https://github.com/yourusername/smart-fleet-iot.git](https://github.com/yourusername/smart-fleet-iot.git)
+    git clone [https://github.com/leomint28/smart-fleet-iot.git](https://github.com/leomint28/smart-fleet-iot.git)
     ```
 2.  Install the required Python library:
     ```bash
