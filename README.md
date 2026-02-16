@@ -1,4 +1,4 @@
-# 🚛 Smart Fleet Management System (IIoT)
+# 🚛 Smart Fleet Management System
 
 ## 📖 Overview
 This project is a complete end-to-end IIoT solution designed to simulate and monitor a fleet of commercial vehicles in real-time. It integrates **Edge Computing (Python Simulation)**, **Network Communication (MQTT)**, and **Cloud Visualization (Node-RED)** to track vehicle location, engine health, and driver behavior.
