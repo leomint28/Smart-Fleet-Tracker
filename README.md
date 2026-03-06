@@ -68,7 +68,7 @@ Node-RED also acts as a **gateway**, rate-limiting telemetry and pushing it to *
 # Repository Structure
 
 ```
-Smart_Fleet_Monitoring/
+Smart-Fleet-Tracker/
 │
 ├── python_edge_simulator/
 │   ├── main.py          # Telemetry generation script
@@ -100,8 +100,8 @@ To run this project locally, install the following:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/leomint28/ECTE474_Smart_Fleet_Monitoring.git
-cd ECTE474_Smart_Fleet_Monitoring
+git clone https://github.com/leomint28/Smart-Fleet-Tracker.git
+cd Smart-Fleet-Tracker
 ```
 
 ### 2. Install Python dependencies
