@@ -12,8 +12,6 @@ The system simulates a fleet of **30 vehicles operating within Dubai**, generati
 
 It utilizes a **dual-path hybrid architecture** to provide both **low-latency local visualization** and **rate-limited cloud data persistence**.
 
-![System Architecture](assets/architecture.png)
-
 ---
 
 # System Architecture
