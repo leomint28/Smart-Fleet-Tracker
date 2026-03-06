@@ -1,4 +1,4 @@
-# Smart Fleet Monitoring System 🚚📡
+# Smart Fleet Monitoring System
 
 ## Project Overview
 This project presents a comprehensive Internet of Things (IoT) system designed for the real-time monitoring and management of commercial vehicle fleets. The objective is to enhance vehicle safety and prevent critical mechanical failures through remote telemetry and edge computing.
@@ -13,8 +13,6 @@ The system simulates a fleet of **30 vehicles operating within Dubai**, generati
 It utilizes a **dual-path hybrid architecture** to provide both **low-latency local visualization** and **rate-limited cloud data persistence**.
 
 ![System Architecture](assets/architecture.png)
-
-> *(Upload the Mermaid.js diagram to the `assets` folder and it will display here.)*
 
 ---
 
@@ -72,7 +70,7 @@ Node-RED also acts as a **gateway**, rate-limiting telemetry and pushing it to *
 # Repository Structure
 
 ```
-ECTE474_Smart_Fleet_Monitoring/
+Smart_Fleet_Monitoring/
 │
 ├── python_edge_simulator/
 │   ├── main.py          # Telemetry generation script
@@ -104,7 +102,7 @@ To run this project locally, install the following:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ECTE474_Smart_Fleet_Monitoring.git
+git clone https://github.com/leomint28/ECTE474_Smart_Fleet_Monitoring.git
 cd ECTE474_Smart_Fleet_Monitoring
 ```
 
@@ -156,8 +154,3 @@ http://localhost:1880/ui
 Access your configured **ThingSpeak channel** to see stored telemetry and charts.
 
 ---
-
-# Example Output
-
-### Live Dashboard
-![Dashboard](assets/dashboard.png)
