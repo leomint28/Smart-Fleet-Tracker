@@ -1,55 +1,163 @@
-# 🚛 Smart Fleet Management System
+# Smart Fleet Monitoring System 🚚📡
 
-## 📖 Overview
-This project is a complete end-to-end IIoT solution designed to simulate and monitor a fleet of commercial vehicles in real-time. It integrates **Edge Computing (Python Simulation)**, **Network Communication (MQTT)**, and **Cloud Visualization (Node-RED)** to track vehicle location, engine health, and driver behavior.
+## Project Overview
+This project presents a comprehensive Internet of Things (IoT) system designed for the real-time monitoring and management of commercial vehicle fleets. The objective is to enhance vehicle safety and prevent critical mechanical failures through remote telemetry and edge computing.
 
-The system addresses the problem of **fleet maintenance and safety** by providing real-time telemetry and automated alerts for engine overheating events.
+The system simulates a fleet of **30 vehicles operating within Dubai**, generating dynamic metrics including:
 
-## 🚀 Features
-* **📍 Real-Time GPS Tracking:** Simulates a fleet of trucks moving along a realistic route in Dubai (Sheikh Zayed Road/Downtown) using waypoint interpolation.
-* **⚙️ Live Telemetry:** Monitors critical vehicle stats including:
-    * **Speed (km/h)**
-    * **Engine RPM** (Correlated to speed for realism)
-    * **Engine Temperature** (Dynamic physics simulation)
-* **⚠️ Automated Safety Logic:** "Edge" logic detects critical overheating (>105°C) and triggers immediate dashboard alerts.
-* **☁️ Cloud Dashboard:** A centralized Node-RED dashboard featuring live maps, gauges, and historical data charts.
+- GPS coordinates  
+- Speed  
+- Engine RPM  
+- Engine temperature  
 
-## 🛠️ Tech Stack (Free & Open Source)
-[cite_start]This project was built using strictly free/open-source tools as per project requirements[cite: 12, 26]:
-* **Device Layer:** Python 3.x (Simulation script)
-* [cite_start]**Communication Layer:** MQTT (HiveMQ Public Broker / Mosquitto) [cite: 25]
-* [cite_start]**Application Layer:** Node-RED & Node-RED Dashboard [cite: 25]
-* **Libraries:** `paho-mqtt` (Python), `node-red-contrib-web-worldmap`
+It utilizes a **dual-path hybrid architecture** to provide both **low-latency local visualization** and **rate-limited cloud data persistence**.
 
-## 📦 Installation & Usage
+![System Architecture](assets/architecture.png)
 
-### 1. Prerequisites
-* [Python 3.10+](https://www.python.org/downloads/)
-* [Node.js & Node-RED](https://nodered.org/docs/getting-started/local)
+> *(Upload the Mermaid.js diagram to the `assets` folder and it will display here.)*
 
-### 2. Setup the Device Simulation
-1.  Clone this repository:
-    ```bash
-    git clone [https://github.com/leomint28/smart-fleet-iot.git](https://github.com/leomint28/smart-fleet-iot.git)
-    ```
-2.  Install the required Python library:
-    ```bash
-    pip install paho-mqtt
-    ```
-3.  Run the simulation script:
-    ```bash
-    python main.py
-    ```
+---
 
-### 3. Setup the Dashboard (Node-RED)
-1.  Start Node-RED:
-    ```bash
-    node-red
-    ```
-2.  Open your browser to `http://localhost:1880`.
-3.  Install the required palette nodes:
-    * `node-red-dashboard`
-    * `node-red-contrib-web-worldmap`
-4.  Import the `flows.json` file provided in this repository.
-5.  Click **Deploy**.
-6.  Access the dashboard at `http://localhost:1880/ui`.
+# System Architecture
+
+The project is built on a robust IoT pipeline:
+
+### 1. Simulated Vehicle Sensors (Edge Device)
+An object-oriented Python script (`main.py`) acts as the edge device, generating telemetry and evaluating local logic such as:
+
+- Geofence breaches
+- Engine overheating alerts
+
+### 2. Network Protocol (MQTT)
+Telemetry is packaged as **JSON** and published to a **public Mosquitto broker**:
+
+```
+test.mosquitto.org
+Port: 1883
+```
+
+### 3. Local Application (Node-RED)
+Node-RED subscribes to the MQTT feed to drive a **real-time web dashboard** that includes:
+
+- Interactive fleet map
+- Live vehicle health gauges
+
+### 4. Cloud Storage (ThingSpeak)
+Node-RED also acts as a **gateway**, rate-limiting telemetry and pushing it to **ThingSpeak** via **HTTP REST APIs** for:
+
+- Historical data visualization
+- Persistent cloud storage
+
+---
+
+# Key Features
+
+- **Real-Time Tracking**  
+  Live mapping of all **30 vehicles simultaneously**
+
+- **Edge Alerts**  
+  Immediate system flags for:
+  - Overspeeding
+  - High engine temperature
+  - Geofence departures (>100km)
+
+- **Targeted Dashboarding**  
+  Clickable map interface to monitor **individual truck telemetry**
+
+- **Cloud Archival**  
+  Automated API integration with **ThingSpeak** for long-term analytics
+
+---
+
+# Repository Structure
+
+```
+ECTE474_Smart_Fleet_Monitoring/
+│
+├── python_edge_simulator/
+│   ├── main.py          # Telemetry generation script
+│   └── requirements.txt      # Python dependencies
+│
+├── node_red_dashboard/
+│   └── flows.json            # Exported Node-RED workspace
+│
+├── assets/
+│   ├── architecture.png
+│   ├── dashboard.png
+└── README.md
+```
+
+---
+
+# Prerequisites
+
+To run this project locally, install the following:
+
+- **Python 3.8+**
+- **Node.js**
+- **Node-RED**
+
+---
+
+# Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/ECTE474_Smart_Fleet_Monitoring.git
+cd ECTE474_Smart_Fleet_Monitoring
+```
+
+### 2. Install Python dependencies
+
+```bash
+cd python_edge_simulator
+pip install -r requirements.txt
+```
+
+### 3. Set up the Node-RED Dashboard
+
+Start Node-RED:
+
+```bash
+node-red
+```
+
+Open your browser and navigate to:
+
+```
+http://localhost:1880
+```
+
+Then:
+
+1. Go to **Menu ≡ → Import**
+2. Upload `node_red_dashboard/flows.json`
+3. Click **Deploy**
+
+---
+
+# Usage
+
+### Start the fleet simulator
+
+```bash
+python main.py
+```
+
+### View the real-time dashboard
+
+```
+http://localhost:1880/ui
+```
+
+### View historical cloud data
+
+Access your configured **ThingSpeak channel** to see stored telemetry and charts.
+
+---
+
+# Example Output
+
+### Live Dashboard
+![Dashboard](assets/dashboard.png)
