@@ -105,7 +105,7 @@ cd Smart-Fleet-Tracker
 ### 2. Install Python dependencies
 
 ```bash
-cd python_edge_simulator
+cd Smart-Fleet-Tracker
 pip install -r requirements.txt
 ```
 
