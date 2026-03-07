@@ -21,7 +21,7 @@ The project is built on a robust IoT pipeline:
 ### 1. Simulated Vehicle Sensors (Edge Device)
 An object-oriented Python script (`main.py`) acts as the edge device, generating telemetry and evaluating local logic such as:
 
-- Geofence breaches
+- Overspeeding alerts
 - Engine overheating alerts
 
 ### 2. Network Protocol (MQTT)
@@ -39,7 +39,6 @@ Node-RED subscribes to the MQTT feed to drive a **real-time web dashboard** that
 - Live vehicle health gauges
 
 ### 4. Cloud Storage (ThingSpeak)
-Node-RED also acts as a **gateway**, rate-limiting telemetry and pushing it to **ThingSpeak** via **HTTP REST APIs** for:
 
 - Historical data visualization
 - Persistent cloud storage
@@ -55,7 +54,6 @@ Node-RED also acts as a **gateway**, rate-limiting telemetry and pushing it to *
   Immediate system flags for:
   - Overspeeding
   - High engine temperature
-  - Geofence departures (>100km)
 
 - **Targeted Dashboarding**  
   Clickable map interface to monitor **individual truck telemetry**
