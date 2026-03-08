@@ -3,7 +3,7 @@
 ## Project Overview
 This project presents a comprehensive Internet of Things (IoT) system designed for the real-time monitoring and management of commercial vehicle fleets. The objective is to enhance vehicle safety and prevent critical mechanical failures through remote telemetry and edge computing.
 
-The system simulates a fleet of **30 vehicles operating within Dubai**, generating dynamic metrics including:
+The system simulates a fleet of **10 vehicles operating within Dubai**, generating dynamic metrics including:
 
 - GPS coordinates  
 - Speed  
